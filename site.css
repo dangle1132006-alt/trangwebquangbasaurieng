@@ -211,6 +211,23 @@ img {
 
 @media (max-width: 1023px) {
     header nav {
+        justify-content: space-between !important;
+        padding-left: 12px !important;
+        padding-right: 16px !important;
+    }
+
+    header nav > a,
+    header nav > img {
+        margin-left: 0 !important;
+    }
+
+    header nav img {
+        height: 76px !important;
+        max-width: 96px;
+        object-fit: contain;
+    }
+
+    header nav {
         padding-right: 16px !important;
     }
 
@@ -249,6 +266,81 @@ img {
 }
 
 @media (max-width: 640px) {
+    header {
+        background: rgba(154, 194, 58, .95) !important;
+    }
+
+    header nav {
+        height: 76px !important;
+    }
+
+    header nav img {
+        height: 68px !important;
+        max-width: 86px;
+    }
+
+    .mobile-menu-button {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+
+    main {
+        padding-top: 28px !important;
+    }
+
+    main > section {
+        margin-top: 0 !important;
+        margin-bottom: 72px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 116px !important;
+    }
+
+    main > section > .flex {
+        align-items: center !important;
+    }
+
+    main > section img {
+        width: min(76vw, 310px) !important;
+        transform: none !important;
+    }
+
+    main > section h2 {
+        font-size: clamp(34px, 11vw, 48px) !important;
+        line-height: 1.12 !important;
+        margin-top: 12px !important;
+        margin-bottom: 18px !important;
+        text-align: center !important;
+    }
+
+    main > section p {
+        font-size: 18px !important;
+        line-height: 1.65 !important;
+        text-align: center !important;
+        max-width: 34rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-origin-bar {
+        left: 0;
+        right: 0;
+        min-height: 96px;
+        border-radius: 0;
+    }
+
+    .origin-nav {
+        left: 14px;
+        right: 14px;
+        bottom: 18px;
+    }
+
+    .origin-trigger {
+        min-height: 56px;
+        font-size: 16px;
+    }
+
     h1 {
         word-break: normal;
     }
