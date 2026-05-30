@@ -1,3 +1,8 @@
+/* ==========================================
+   1. CSS DÙNG CHUNG (SHARED CSS)
+   Áp dụng cho toàn bộ các trang trong hệ thống
+   ========================================== */
+
 html {
     scroll-behavior: smooth;
 }
@@ -10,7 +15,8 @@ img {
     max-width: 100%;
 }
 
-.site-menu {
+/* Menu chính ở thanh điều hướng */
+.menu-chinh {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -22,7 +28,8 @@ img {
     gap: 24px;
 }
 
-.nav-link {
+/* Đường dẫn liên kết trong menu điều hướng */
+.lien-ket-menu {
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -31,17 +38,17 @@ img {
     transition: color .2s ease;
 }
 
-.nav-link:hover {
+.lien-ket-menu:hover {
     color: #eab308;
 }
 
-.site-menu a,
-.nav-link {
+.menu-chinh a,
+.lien-ket-menu {
     position: relative;
 }
 
-.site-menu a::after,
-.nav-link::after {
+.menu-chinh a::after,
+.lien-ket-menu::after {
     content: "";
     position: absolute;
     left: 0;
@@ -54,27 +61,30 @@ img {
     transition: transform .25s ease;
 }
 
-.site-menu a:hover::after,
-.nav-link:hover::after {
+.menu-chinh a:hover::after,
+.lien-ket-menu:hover::after {
     transform: scaleX(1);
 }
 
-.footer-link {
+/* Liên kết ở chân trang (Footer) */
+.lien-ket-chan-trang {
     color: #333;
     font-size: 14px;
     transition: color .2s ease;
 }
 
-.footer-link:hover {
+.lien-ket-chan-trang:hover {
     color: #ffb800;
 }
+
 @media (min-width: 768px) {
-    .footer-link {
+    .lien-ket-chan-trang {
         font-size: 16px;
     }
 }
 
-.mobile-menu-button {
+/* Nút mở menu trên điện thoại di động */
+.nut-menu-di-dong {
     display: none;
     width: 42px;
     height: 42px;
@@ -89,7 +99,8 @@ img {
     z-index: 20;
 }
 
-.mobile-menu-panel {
+/* Bảng menu hiển thị trên điện thoại di động */
+.bang-menu-di-dong {
     display: none;
     position: fixed;
     top: 80px;
@@ -103,7 +114,7 @@ img {
     padding: 12px;
 }
 
-.mobile-menu-panel a {
+.bang-menu-di-dong a {
     display: block;
     padding: 12px 14px;
     color: #166534;
@@ -113,102 +124,11 @@ img {
     border-radius: 10px;
 }
 
-.mobile-menu-panel a:hover {
+.bang-menu-di-dong a:hover {
     background: #fef3c7;
 }
 
-.product-origin-bar {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 0;
-    min-height: 80px;
-    background: #9ac23a;
-}
-
-.origin-nav {
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 30;
-}
-
-.origin-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, .96);
-    color: #166534;
-    font-size: 13px;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 10px 14px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .16);
-    cursor: pointer;
-}
-
-.origin-panel {
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: calc(100% + 12px);
-    width: 300px;
-    background: rgba(255, 255, 255, .98);
-    border: 1px solid rgba(50, 168, 102, .16);
-    border-radius: 16px;
-    box-shadow: 0 20px 55px rgba(0, 0, 0, .2);
-    padding: 16px;
-}
-
-.origin-panel::after {
-    content: "";
-    position: absolute;
-    right: 28px;
-    bottom: -8px;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    transform: rotate(45deg);
-}
-
-.origin-title {
-    color: #14532d;
-    font-size: 15px;
-    font-weight: 900;
-    margin-bottom: 8px;
-}
-
-.origin-detail {
-    color: #4b5563;
-    font-size: 14px;
-    line-height: 1.55;
-}
-
-.origin-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 12px;
-}
-
-.origin-meta span {
-    border-radius: 999px;
-    background: #ecfccb;
-    color: #166534;
-    font-size: 12px;
-    font-weight: 800;
-    padding: 5px 8px;
-}
-
-@media (min-width: 768px) {
-    .product-origin-bar {
-        left: 32px;
-        right: 32px;
-    }
-}
-
+/* Điều chỉnh responsive chung cho Header & Main */
 @media (max-width: 1023px) {
     header nav {
         justify-content: space-between !important;
@@ -231,37 +151,12 @@ img {
         padding-right: 16px !important;
     }
 
-    .mobile-menu-button {
+    .nut-menu-di-dong {
         display: inline-flex;
     }
 
-    .site-menu {
+    .menu-chinh {
         display: none !important;
-    }
-
-    .product-origin-bar {
-        min-height: 92px;
-    }
-
-    .origin-nav {
-        left: 16px;
-        right: 16px;
-        top: auto;
-        bottom: 14px;
-        transform: none;
-    }
-
-    .origin-trigger {
-        width: 100%;
-        justify-content: center;
-        font-size: 12px;
-        padding: 9px 12px;
-    }
-
-    .origin-panel {
-        left: 0;
-        right: 0;
-        width: auto;
     }
 }
 
@@ -279,7 +174,7 @@ img {
         max-width: 86px;
     }
 
-    .mobile-menu-button {
+    .nut-menu-di-dong {
         width: 52px;
         height: 52px;
         font-size: 26px;
@@ -323,38 +218,173 @@ img {
         margin-right: auto;
     }
 
-    .product-origin-bar {
+    h1 {
+        word-break: normal;
+    }
+}
+
+
+/* ==========================================
+   2. CSS RIÊNG LẺ (PAGE-SPECIFIC CSS)
+   Chỉ áp dụng cho trang chủ (index.html)
+   ========================================== */
+
+/* Thanh hiển thị xuất xứ sản phẩm */
+.thanh-xuat-xu {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    min-height: 80px;
+    background: #9ac23a;
+}
+
+/* Vùng điều hướng thông tin xuất xứ */
+.dieu-huong-xuat-xu {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+}
+
+/* Nút kích hoạt mở popup xuất xứ */
+.nut-xuat-xu {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .96);
+    color: #166534;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .16);
+    cursor: pointer;
+}
+
+/* Bảng thông tin chi tiết xuất xứ */
+.bang-xuat-xu {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12px);
+    width: 300px;
+    background: rgba(255, 255, 255, .98);
+    border: 1px solid rgba(50, 168, 102, .16);
+    border-radius: 16px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, .2);
+    padding: 16px;
+}
+
+.bang-xuat-xu::after {
+    content: "";
+    position: absolute;
+    right: 28px;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+/* Tiêu đề vùng trồng xuất xứ */
+.tieu-de-xuat-xu {
+    color: #14532d;
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+/* Nội dung chi tiết xuất xứ */
+.chi-tiet-xuat-xu {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* Nhãn thông tin phụ (tags) xuất xứ */
+.thong-tin-xuat-xu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.thong-tin-xuat-xu span {
+    border-radius: 999px;
+    background: #ecfccb;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 5px 8px;
+}
+
+/* Điều chỉnh responsive cho phần xuất xứ sản phẩm */
+@media (min-width: 768px) {
+    .thanh-xuat-xu {
+        left: 32px;
+        right: 32px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .thanh-xuat-xu {
+        min-height: 92px;
+    }
+
+    .dieu-huong-xuat-xu {
+        left: 16px;
+        right: 16px;
+        top: auto;
+        bottom: 14px;
+        transform: none;
+    }
+
+    .nut-xuat-xu {
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+
+    .bang-xuat-xu {
+        left: 0;
+        right: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .thanh-xuat-xu {
         left: 0;
         right: 0;
         min-height: 96px;
         border-radius: 0;
     }
 
-    .origin-nav {
+    .dieu-huong-xuat-xu {
         left: 14px;
         right: 14px;
         bottom: 18px;
     }
 
-    .origin-trigger {
+    .nut-xuat-xu {
         min-height: 56px;
         font-size: 16px;
     }
 
-    h1 {
-        word-break: normal;
-    }
-
-    .origin-panel {
+    .bang-xuat-xu {
         bottom: calc(100% + 10px);
         padding: 14px;
     }
 
-    .origin-title {
+    .tieu-de-xuat-xu {
         font-size: 14px;
     }
 
-    .origin-detail {
+    .chi-tiet-xuat-xu {
         font-size: 13px;
     }
 }

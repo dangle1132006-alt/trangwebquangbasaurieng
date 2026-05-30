@@ -1,9 +1,9 @@
 $(function () {
-    var $siteMenu = $('.site-menu').first();
+    var $siteMenu = $('.menu-chinh').first();
 
-    if ($siteMenu.length && !$('.mobile-menu-button').length) {
-        var $button = $('<button class="mobile-menu-button" type="button" aria-label="Mo menu">&#9776;</button>');
-        var $panel = $('<div class="mobile-menu-panel" aria-label="Menu điện thoại"></div>');
+    if ($siteMenu.length && !$('.nut-menu-di-dong').length) {
+        var $button = $('<button class="nut-menu-di-dong" type="button" aria-label="Mo menu">&#9776;</button>');
+        var $panel = $('<div class="bang-menu-di-dong" aria-label="Menu điện thoại"></div>');
 
         $siteMenu.find('a').each(function () {
             var $link = $(this).clone();
@@ -29,9 +29,9 @@ $(function () {
         });
     }
 
-    $('.origin-nav').each(function () {
+    $('.dieu-huong-xuat-xu').each(function () {
         var $nav = $(this);
-        var $panel = $nav.find('.origin-panel');
+        var $panel = $nav.find('.bang-xuat-xu');
 
         $nav.on('mouseenter focusin', function () {
             $panel.stop(true, true).fadeIn(150).css('display', 'block');
@@ -41,7 +41,7 @@ $(function () {
             $panel.stop(true, true).fadeOut(150);
         });
 
-        $nav.find('.origin-trigger').on('click', function () {
+        $nav.find('.nut-xuat-xu').on('click', function () {
             $panel.stop(true, true).fadeToggle(150);
         });
     });
